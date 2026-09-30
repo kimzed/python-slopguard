@@ -83,7 +83,7 @@ def _command(ctx: Context) -> list[str]:
     ]
     for key, setting in LIMITS.items():
         command += ["--config", f"{key} = {edit[setting]}"]
-    if not ctx.config["respect_noqa"]:
+    if not ctx.config["allow_suppression_comments"]:
         command.append("--ignore-noqa")
     return command
 

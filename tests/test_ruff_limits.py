@@ -48,10 +48,10 @@ def test_limits_come_from_config(repo):
     )
 
 
-def test_noqa_is_ignored_unless_respected(repo):
+def test_noqa_is_ignored_unless_suppression_allowed(repo):
     (repo / "a.py").write_text("def f(a, b, c, d, e):  # noqa: PLR0913, PLR0917\n    return a\n")
     assert codes(run(repo)) == ["PLR0913", "PLR0917"]
-    (repo / "pyproject.toml").write_text("[tool.slopguard]\nrespect_noqa = true\n")
+    (repo / "pyproject.toml").write_text("[tool.slopguard]\nallow_suppression_comments = true\n")
     assert run(repo) == []
 
 

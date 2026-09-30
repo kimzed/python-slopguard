@@ -7,10 +7,10 @@ from typing import Any
 
 DEFAULTS: dict[str, Any] = {
     "exclude": [],
-    "respect_noqa": False,
+    "allow_suppression_comments": False,
     "max_findings": 10,
     "on_missing_tool": "warn",
-    "feedback_footer": "Fix by refactoring. Do not add suppression comments.",
+    "instructions_to_claude_on_block": "Fix by refactoring. Do not add suppression comments.",
     "edit": {
         "enabled": True,
         "max_complexity": 6,

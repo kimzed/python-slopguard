@@ -113,10 +113,10 @@ Config lives in the `[tool.slopguard]` table of the project's `pyproject.toml`, 
 ```toml
 [tool.slopguard]
 exclude = ["**/migrations/**"] # applies to every check, unioned with section excludes
-respect_noqa = false          # false: Claude cannot silence findings with # noqa
+allow_suppression_comments = false #  false: Claude cannot silence findings with # noqa
 max_findings = 10             # cap per report; the report ends with "...and N more"
 on_missing_tool = "warn"      # "warn" | "skip" | "error"
-feedback_footer = "Fix by refactoring. Do not add suppression comments."
+instructions_to_claude_on_block = "Fix by refactoring. Do not add suppression comments."
 
 [tool.slopguard.edit]         # limits for changed files, checked at Stop
 enabled = true
@@ -200,7 +200,7 @@ Each decision has a recommendation; confirm or override before the milestone tha
 1. Are tests exempt from the `[edit]` limits? Recommendation: exempt from `max_args` and `max_statements` only (fixtures and parametrized tests legitimately grow), keep complexity and nesting.
 2. Exact default for `max_file_lines`. Recommendation: keep 400 and tune in M6.
 3. Two-tier duplication rule: also flag pairs (2 copies) when the block is very large (for example 150+ tokens)? Recommendation: off in v1.
-4. `respect_noqa`. Recommendation: `false` so suppression is a deliberate human act in config, pending confirmation of what `--ignore-noqa` covers (section 10).
+4. `allow_suppression_comments`. Recommendation: `false` so suppression is a deliberate human act in config, pending confirmation of what `--ignore-noqa` covers (section 10).
 5. Stop-hook loop policy. Recommendation: when `stop_hook_active` is true (one fix attempt already made), print the remaining findings and exit 0 instead of blocking again.
 6. Distribution. Recommendation: installed CLI only for v1; a plugin wrapper after M6 (plugins can bundle hooks, see section 8).
 

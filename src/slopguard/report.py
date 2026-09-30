@@ -21,5 +21,5 @@ def format_report(findings: list[Finding], config: dict[str, Any]) -> str:
     lines += [finding.render() for finding in findings[:cap]]
     if len(findings) > cap:
         lines.append(f"...and {len(findings) - cap} more")
-    lines.append(config["feedback_footer"])
+    lines.append(config["instructions_to_claude_on_block"])
     return "\n".join(lines)
