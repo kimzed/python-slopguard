@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pmd-cpd xmlns="https://pmd-code.org/schema/cpd-report"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         pmdVersion="7.28.0"
+         timestamp="x"
+         version="1.0.0"
+         xsi:schemaLocation="https://pmd-code.org/schema/cpd-report https://pmd.github.io/schema/cpd-report_1_0_0.xsd">
+   <file path="/project/src/a.py"
+         totalNumberOfTokens="116"/>
+   <file path="/project/src/b.py"
+         totalNumberOfTokens="116"/>
+   <file path="/project/src/c.py"
+         totalNumberOfTokens="116"/>
+   <file path="/project/src/clean.py"
+         totalNumberOfTokens="3"/>
+   <duplication lines="9" tokens="114">
+      <file begintoken="2"
+            column="14"
+            endcolumn="18"
+            endline="9"
+            endtoken="115"
+            line="1"
+            path="/project/src/a.py"/>
+      <file begintoken="119"
+            column="14"
+            endcolumn="18"
+            endline="9"
+            endtoken="232"
+            line="1"
+            path="/project/src/b.py"/>
+      <file begintoken="236"
+            column="14"
+            endcolumn="18"
+            endline="9"
+            endtoken="349"
+            line="1"
+            path="/project/src/c.py"/>
+      <codefragment><![CDATA[def process_a(records, threshold):
+    result = []
+    for record in records:
+        if record.get("status") == "active" and record.get("score", 0) > threshold:
+            name = record["name"].strip().lower()
+            tags = [tag.upper() for tag in record.get("tags", []) if tag]
+            result.append({"name": name, "tags": tags, "score": record["score"]})
+    result.sort(key=lambda item: item["score"], reverse=True)
+    return result
+]]></codefragment>
+   </duplication>
+   <error filename="/project/src/bad.py"
+          msg="LexException: Lexical error in file 'src/bad.py' at line 3, column 1: &lt;EOF&gt; after : &#34;&#34; (in lexical state IN_STRING21)">net.sourceforge.pmd.lang.ast.LexException: Lexical error in file 'src/bad.py' at line 3, column 1: &lt;EOF&gt; after : "" (in lexical state IN_STRING21)
+	at net.sourceforge.pmd.lang.ast.InternalApiBridge.newLexException(InternalApiBridge.java:25)
+	at net.sourceforge.pmd.lang.python.ast.PythonParserImplTokenManager.getNextToken(PythonParserImplTokenManager.java:3943)
+	at net.sourceforge.pmd.lang.python.ast.PythonParserImplTokenManager.getNextToken(PythonParserImplTokenManager.java:7)
+	at net.sourceforge.pmd.cpd.impl.BaseTokenFilter.getNextToken(BaseTokenFilter.java:44)
+	at net.sourceforge.pmd.cpd.impl.CpdLexerBase.tokenize(CpdLexerBase.java:40)
+	at net.sourceforge.pmd.cpd.CpdLexer.tokenize(CpdLexer.java:29)
+	at net.sourceforge.pmd.cpd.CpdAnalysis.doTokenize(CpdAnalysis.java:150)
+	at net.sourceforge.pmd.cpd.CpdAnalysis.tokenizeFiles(CpdAnalysis.java:225)
+	at net.sourceforge.pmd.cpd.CpdAnalysis.findMatches(CpdAnalysis.java:198)
+	at net.sourceforge.pmd.cpd.CpdAnalysis.performAnalysis(CpdAnalysis.java:164)
+	at net.sourceforge.pmd.cli.commands.internal.CpdCommand.doExecute(CpdCommand.java:136)
+	at net.sourceforge.pmd.cli.commands.internal.CpdCommand.doExecute(CpdCommand.java:27)
+	at net.sourceforge.pmd.cli.internal.PmdRootLogger.executeInLoggingContext(PmdRootLogger.java:55)
+	at net.sourceforge.pmd.cli.commands.internal.AbstractAnalysisPmdSubcommand.execute(AbstractAnalysisPmdSubcommand.java:188)
+	at net.sourceforge.pmd.cli.commands.internal.AbstractPmdSubcommand.call(AbstractPmdSubcommand.java:30)
+	at net.sourceforge.pmd.cli.commands.internal.AbstractPmdSubcommand.call(AbstractPmdSubcommand.java:16)
+	at picocli.CommandLine.executeUserObject(CommandLine.java:2031)
+	at picocli.CommandLine.access$1500(CommandLine.java:148)
+	at picocli.CommandLine$RunLast.executeUserObjectOfLastSubcommandWithSameParent(CommandLine.java:2469)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2461)
+	at picocli.CommandLine$RunLast.handle(CommandLine.java:2423)
+	at picocli.CommandLine$AbstractParseResultHandler.execute(CommandLine.java:2277)
+	at picocli.CommandLine$RunLast.execute(CommandLine.java:2425)
+	at picocli.CommandLine.execute(CommandLine.java:2174)
+	at net.sourceforge.pmd.cli.PmdCli.mainWithoutExit(PmdCli.java:25)
+	at net.sourceforge.pmd.cli.PmdCli.main(PmdCli.java:29)
+</error>
+</pmd-cpd>

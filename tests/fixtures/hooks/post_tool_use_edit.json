@@ -1,0 +1,41 @@
+{
+  "session_id": "4e413e17-4477-4c46-90ea-212d5c634dbe",
+  "transcript_path": "/redacted",
+  "cwd": "/project",
+  "scratchpad_dir": "/redacted",
+  "prompt_id": "d1eff6b4-197e-4a6d-9607-e23d4dc5ebe1",
+  "permission_mode": "auto",
+  "effort": {
+    "level": "medium"
+  },
+  "hook_event_name": "PostToolUse",
+  "tool_name": "Edit",
+  "tool_input": {
+    "file_path": "/project/probe/scratch.py",
+    "old_string": "x = 2",
+    "new_string": "x = 3",
+    "replace_all": false
+  },
+  "tool_response": {
+    "filePath": "/project/probe/scratch.py",
+    "oldString": "x = 2",
+    "newString": "x = 3",
+    "originalFile": "x = 2\n",
+    "structuredPatch": [
+      {
+        "oldStart": 1,
+        "oldLines": 1,
+        "newStart": 1,
+        "newLines": 1,
+        "lines": [
+          "-x = 2",
+          "+x = 3"
+        ]
+      }
+    ],
+    "userModified": false,
+    "replaceAll": false
+  },
+  "tool_use_id": "toolu_01LskcJ6Yo88uFwBCcsycu2M",
+  "duration_ms": 17
+}

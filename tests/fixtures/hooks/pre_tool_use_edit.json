@@ -1,0 +1,20 @@
+{
+  "session_id": "4e413e17-4477-4c46-90ea-212d5c634dbe",
+  "transcript_path": "/redacted",
+  "cwd": "/project",
+  "scratchpad_dir": "/redacted",
+  "prompt_id": "3ce3d42e-88c9-43e0-86df-49151ba56efc",
+  "permission_mode": "auto",
+  "effort": {
+    "level": "medium"
+  },
+  "hook_event_name": "PreToolUse",
+  "tool_name": "Edit",
+  "tool_input": {
+    "file_path": "/project/probe/scratch.py",
+    "old_string": "x = 3",
+    "new_string": "x = 4",
+    "replace_all": false
+  },
+  "tool_use_id": "toolu_01XgZsou6W9dJXbnNv8Fec8P"
+}

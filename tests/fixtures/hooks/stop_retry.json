@@ -1,0 +1,16 @@
+{
+  "session_id": "4e413e17-4477-4c46-90ea-212d5c634dbe",
+  "transcript_path": "/redacted",
+  "cwd": "/project",
+  "scratchpad_dir": "/redacted",
+  "prompt_id": "d1eff6b4-197e-4a6d-9607-e23d4dc5ebe1",
+  "permission_mode": "auto",
+  "effort": {
+    "level": "medium"
+  },
+  "hook_event_name": "Stop",
+  "stop_hook_active": true,
+  "last_assistant_message": "Done.",
+  "background_tasks": [],
+  "session_crons": []
+}

@@ -1,0 +1,8 @@
+src/app.py:1: unused import 'os' (90% confidence, 1 line)
+src/app.py:10: unused variable 'attr' (60% confidence, 1 line)
+src/app.py:16: unused variable 'unused_arg' (100% confidence, 1 line)
+src/app.py:18: unreachable code after 'return' (100% confidence, 1 line)
+src/app.py:6: unused function 'unused_helper' (60% confidence, 2 lines)
+src/app.py:9: unused class 'Unused' (60% confidence, 2 lines)
+src/app.py:12: unused function 'handler' (60% confidence, 3 lines)
+src/bad.py:1: invalid syntax at "def (:"
